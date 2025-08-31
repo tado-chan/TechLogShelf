@@ -1,0 +1,117 @@
+.collected-stamps-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.no-stamps {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+.no-stamps p {
+  margin: 0.5rem 0;
+}
+
+.hint {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.stamps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stamp-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #e8f4fd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f8fbff 0%, #e8f4fd 100%);
+}
+
+.stamp-item:hover {
+  border-color: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
+
+.stamp-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.stamp-info {
+  flex-grow: 1;
+}
+
+.stamp-title {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.stamp-description {
+  margin: 0 0 0.5rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+}
+
+.collected-date {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.arrow {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .stamp-item {
+    padding: 0.75rem;
+  }
+  
+  .emoji {
+    font-size: 2rem;
+  }
+  
+  .stamp-title {
+    font-size: 1rem;
+  }
+  
+  .stamp-description {
+    font-size: 0.8rem;
+  }
+  
+  .collected-date {
+    font-size: 0.7rem;
+  }
+}

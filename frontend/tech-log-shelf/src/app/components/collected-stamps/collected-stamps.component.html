@@ -1,0 +1,30 @@
+<div class="collected-stamps-container">
+  <h3 class="section-title">🏆 獲得スタンプ一覧</h3>
+  
+  <div *ngIf="store.collectedStamps().length === 0" class="no-stamps">
+    <p>まだスタンプを獲得していません</p>
+    <p class="hint">読書記録を登録してスタンプを集めよう！</p>
+  </div>
+
+  <div *ngIf="store.collectedStamps().length > 0" class="stamps-list">
+    <div 
+      *ngFor="let stamp of store.collectedStamps()" 
+      class="stamp-item"
+      (click)="onStampClick(stamp)"
+    >
+      <div class="stamp-icon">
+        <span class="emoji">{{ stamp.emoji }}</span>
+      </div>
+      <div class="stamp-info">
+        <h4 class="stamp-title">{{ stamp.name }}</h4>
+        <p class="stamp-description">{{ stamp.description }}</p>
+        <p class="collected-date">
+          {{ formatDate(stamp.collectedAt!) }}に獲得
+        </p>
+      </div>
+      <div class="arrow">
+        →
+      </div>
+    </div>
+  </div>
+</div>

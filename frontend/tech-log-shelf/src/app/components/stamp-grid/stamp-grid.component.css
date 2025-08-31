@@ -1,0 +1,130 @@
+.stamp-grid-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.grid-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.stamp-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.stamp-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.stamp-cell {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #d0d0d0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.stamp-cell.collected {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.stamp-cell.collected::after {
+  content: '✓';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #27ae60;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.stamp-cell:not(.collected) {
+  opacity: 0.4;
+  filter: grayscale(80%);
+}
+
+.stamp-cell:not(.collected):hover {
+  opacity: 0.6;
+  transform: scale(1.02);
+}
+
+.stamp-cell.empty {
+  border: 2px dashed #d0d0d0;
+  background: transparent;
+}
+
+.stamp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stamp-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.stamp-name {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.empty-cell {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .stamp-cell {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .stamp-emoji {
+    font-size: 1.5rem;
+  }
+  
+  .stamp-name {
+    font-size: 0.6rem;
+  }
+}

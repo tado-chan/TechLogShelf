@@ -1,0 +1,39 @@
+<div class="home-container">
+  <header class="app-header">
+    <h1>📚 TechLogShelf</h1>
+    <p>オライリー技術書読書記録アプリ</p>
+  </header>
+
+  <!-- スタンプコレクション グリッド -->
+  <app-stamp-grid
+    [stampGrid]="store.stampGrid()"
+    [collectedCount]="store.collectedStampsCount()"
+    [totalStamps]="store.animalStamps().length"
+  ></app-stamp-grid>
+
+  <!-- 最新の読書記録 -->
+  <app-recent-record></app-recent-record>
+
+  <!-- 読書記録登録ボタン -->
+  <div class="action-section">
+    <button class="register-btn" (click)="openRegistrationForm()">
+      📝 読書記録を登録する
+    </button>
+  </div>
+
+  <!-- 獲得スタンプ一覧 -->
+  <app-collected-stamps 
+    (stampClicked)="onStampClicked($event)"
+  ></app-collected-stamps>
+
+  <div class="stats-summary">
+    <div class="stat-item">
+      <span class="stat-label">読書記録:</span>
+      <span class="stat-value">{{ store.totalReadingRecords() }}冊</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">獲得スタンプ:</span>
+      <span class="stat-value">{{ store.collectedStampsCount() }}個</span>
+    </div>
+  </div>
+</div>

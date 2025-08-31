@@ -1,0 +1,38 @@
+<div class="recent-record-container">
+  <h3 class="section-title">📚 最新の読書記録</h3>
+  
+  <div *ngIf="!store.recentReadingRecord()" class="no-record">
+    <p>まだ読書記録がありません</p>
+    <p class="hint">最初の本を登録してみましょう！</p>
+  </div>
+
+  <div *ngIf="store.recentReadingRecord() as record" class="record-card">
+    <div class="record-header">
+      <h4 class="book-title">{{ record.bookTitle }}</h4>
+      <div class="rating">
+        <span 
+          *ngFor="let star of getStarArray(record.rating)"
+          class="star"
+          [class.filled]="star <= record.rating"
+        >
+          ★
+        </span>
+      </div>
+    </div>
+    
+    <div class="record-body">
+      <p class="memo" *ngIf="record.memo">{{ record.memo }}</p>
+      <div class="record-footer">
+        <span class="completion-date">
+          {{ formatDate(record.completedAt) }}に完読
+        </span>
+        <span 
+          *ngIf="record.stampId && getStampById(record.stampId) as stamp" 
+          class="stamp-earned"
+        >
+          {{ stamp.emoji }} {{ stamp.name }}スタンプ獲得！
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
