@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  rust:
+    image: rust:latest
+    command: bash -c "tail -f /dev/null"
+    volumes:
+      - .:/backend
+    working_dir: /backend
+    environment:
+      - USER=user
