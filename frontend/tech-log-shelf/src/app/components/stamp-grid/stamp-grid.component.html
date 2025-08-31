@@ -6,21 +6,21 @@
       class="stamp-row"
     >
       <div 
-        *ngFor="let stamp of row; let j = index" 
+        *ngFor="let slot of row; let j = index" 
         class="stamp-cell"
-        [class.collected]="stamp?.isCollected"
-        [class.empty]="!stamp"
-        [title]="stamp ? stamp.description : ''"
+        [class.collected]="!!slot.stamp"
+        [class.empty]="!slot.stamp"
+        [title]="slot.stamp ? slot.stamp.description : ''"
       >
-        <div *ngIf="stamp" class="stamp-content">
-          <span class="stamp-emoji">{{ stamp.emoji }}</span>
-          <span class="stamp-name">{{ stamp.name }}</span>
+        <div *ngIf="slot.stamp" class="stamp-content">
+          <span class="stamp-emoji">{{ slot.stamp.emoji }}</span>
+          <span class="stamp-name">{{ slot.stamp.name }}</span>
         </div>
-        <div *ngIf="!stamp" class="empty-cell"></div>
+        <div *ngIf="!slot.stamp" class="empty-cell"></div>
       </div>
     </div>
   </div>
   <div class="progress-text">
-    {{ collectedCount }} / {{ totalStamps }} 個集めました！
+    {{ collectedCount }} / 25 個集めました！
   </div>
 </div>

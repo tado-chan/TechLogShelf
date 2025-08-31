@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AnimalStamp } from '../../stores/app.store';
+import { StampSlot } from '../../stores/app.store';
 
 @Component({
   selector: 'app-stamp-grid',
@@ -10,7 +10,6 @@ import { AnimalStamp } from '../../stores/app.store';
   styleUrl: './stamp-grid.component.css'
 })
 export class StampGridComponent {
-  @Input() stampGrid: (AnimalStamp | null)[][] = [];
+  @Input() stampGrid: StampSlot[][] = [];
   @Input() collectedCount: number = 0;
-  @Input() totalStamps: number = 0;
 }
