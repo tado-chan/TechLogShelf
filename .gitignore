@@ -14,8 +14,7 @@
 
 # Environment files
 /.env
-TechLogShelf\backend\.env
-TechLogShelf\backend\target
+backend\target
 
 # Angular CLI and build artefacts
 /.angular-cli.json
@@ -28,3 +27,4 @@ TechLogShelf\backend\target
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+backend/.env
